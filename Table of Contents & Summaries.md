@@ -1,0 +1,96 @@
+# Table of Contents & Summaries
+
+A quick-reference map of every file in this folder: its headings, and a short summary of what it covers. Use this when you want to find the right file fast without opening each one.
+
+## `README.md`
+
+- Reading Order
+- Diagram
+- One-Paragraph Summary
+- Sources
+
+**Summary:** Index file that orders the other six docs and gives a one-paragraph overview of the whole model: feature → dev → staging → production, with hotfix as the only exception.
+
+## `Rules.md`
+
+- The Golden Rule
+- The Branches
+- Quick Answer: "Where do I branch from / merge into?"
+- Rules to Remember
+- Sources
+
+**Summary:** The foundational reference — a table of every branch (`feature/*`, `dev`, `staging`, `production`), what it's for, and the six core rules (never commit directly, never branch off staging/production, etc.).
+
+## `Access-Control.md`
+
+- How It Actually Works
+  - Everyone contributes to `dev` through a gate, not directly
+  - Promotions to `staging`/`production` are more tightly controlled
+  - It should never depend on a single person
+- Summary
+
+**Summary:** Explains that branches are protected by *access control* (PRs, reviews, CI, CODEOWNERS), not owned by individuals, and that release approval should sit with a role/group to avoid a "bus factor" of one.
+
+## `Developer-Workflow.md`
+
+- Quick Validation of the Common Assumptions
+- Step-by-Step: Working on One Feature
+- The Hotfix Exception
+- One-Line Summary
+- Sources
+
+**Summary:** The hands-on, command-by-command guide for a single developer: branch from `dev`, commit, sync, open a PR, merge, delete the branch — plus where the hotfix exception fits in.
+
+## `Always-Pull-From-Dev-Dont-Be-Stupid.md`
+
+- The Rule
+- The Excuses People Make (and Why They're Wrong)
+  - "My branch is already finished, I don't need to pull."
+  - "My branch started first / I was here before the other changes."
+  - "I don't want to deal with merge conflicts."
+  - "It worked on my machine / in my branch, that's good enough."
+- Why This Actually Matters
+- The Standard You're Held To
+- One-Line Summary
+- Sources
+
+**Summary:** A myth-busting file — shoots down four common excuses for skipping `dev` pulls and shows the downstream cost of skipping (CI breaks, huge stale conflicts, team distrust of `dev`).
+
+## `Pulling-From-Dev-Explained.md`
+
+- The Core Idea
+- So Yes — Pulling Is a Repeated Action, Not a One-Time Step
+- When to Pull (In Practice)
+- How
+- Why This Matters More Than It Seems
+- One-Line Summary
+- Sources
+
+**Summary:** Companion piece to the file above, focused on the mechanics/cadence: `dev` keeps moving, so pulling is an ongoing habit (daily, and always before opening a PR), not a one-time setup step.
+
+## `Hotfix-Workflow.md`
+
+- Quick Validation
+- The Flow, Visually
+- Step-by-Step
+- Why Branch From `production` and Not `dev`?
+- Common Mistakes
+- What a Senior Engineer Thinks About
+- Key Takeaway
+- Sources
+
+**Summary:** Covers the one exception to the normal flow — branching a `hotfix/*` off `production`, fixing and deploying it, then manually back-merging into `staging` and `dev` so the fix isn't lost on the next release.
+
+## `Sources-And-References.md`
+
+- 1. The feature → dev → staging → production branch model
+- 2. Never commit directly to protected branches; use Pull Requests + review + CI
+- 3. CODEOWNERS and required reviewers
+- 4. "Bus factor" (why approval shouldn't rest on one person)
+- 5. Hotfix branches off production, then back-merged into dev/staging
+- 6. Keep feature branches short-lived and sync them with the base branch often
+- 7. Rollback as an alternative to a rushed hotfix
+- File → Section Map
+- Honest Caveat
+
+**Summary:** The citation ledger — maps every claim in the other six files back to an external, industry-standard source (Driessen's Gitflow post, GitHub/GitLab docs, Fowler, Google SRE book), plus a file-to-section lookup table.
