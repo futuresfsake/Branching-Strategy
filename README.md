@@ -25,6 +25,9 @@ This folder documents our Gitflow-based branching strategy: which branches exist
 7. **[Sources-And-References.md](./Sources-And-References.md)**
    Where every practice above comes from — links to the original Gitflow spec, GitHub/GitLab official docs, and established engineering writing (Martin Fowler, Google SRE). Use this if someone asks "is this actually standard practice, or did you just make it up?"
 
+8. **[FAQ-Auto-PRs-And-Who-Can-Push-Where.md](./FAQ-Auto-PRs-And-Who-Can-Push-Where.md)**
+   Answers to questions that come up once this is live in a real repo: why `testing`/`staging` auto-open a PR to `main` but feature branches don't, and who's actually allowed to push to `dev`/`staging`/`main`.
+
 ## Diagram
 
 A visual overview of the full Gitflow model is also available at [`../Diagram/Gitflow.png`](../Diagram/Gitflow.png).
@@ -32,6 +35,11 @@ A visual overview of the full Gitflow model is also available at [`../Diagram/Gi
 ## One-Paragraph Summary
 
 Every developer branches a `feature/*` off `dev`, pulls from `dev` regularly while working, and opens a PR back into `dev` — never committing directly to any protected branch. `dev` is promoted to `staging` for QA/UAT, and `staging` is promoted to `production` once approved — never the other way around. The only exception is a `hotfix/*`, branched off `production` for an urgent live bug, which must be manually merged back into both `production` and `dev` so the fix survives the next release.
+
+## Sources
+
+Every file in this folder ends with its own "Sources" section. [Sources-And-References.md](./Sources-And-References.md) is the master list, with a file-by-file map at the bottom of that document.
+
 
 ## Sources
 
