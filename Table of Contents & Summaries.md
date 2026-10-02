@@ -94,3 +94,17 @@ A quick-reference map of every file in this folder: its headings, and a short su
 - Honest Caveat
 
 **Summary:** The citation ledger — maps every claim in the other six files back to an external, industry-standard source (Driessen's Gitflow post, GitHub/GitLab docs, Fowler, Google SRE book), plus a file-to-section lookup table.
+
+## `FAQ-Auto-PRs-And-Who-Can-Push-Where.md`
+
+- 1. Why does pushing to `testing`/`staging` auto-create a PR to `main`, but personal branches don't?
+- 2. If `dev` has a child branch `chatbot`, does pushing to `chatbot` auto-create a PR?
+- 3. Can "everyone" touch `dev`? And should `staging`/`main` really only have one person?
+- One-Line Summary
+- Related
+
+**Summary:** A practical FAQ for once the model is live in a real repo — explains that auto-PR-on-push is a repo-configured gate (branch protection/CI workflow) that only exists on promotion branches like `testing`/`staging`, not on feature branches, and reiterates that `dev`/`staging`/`production` are reached only through PRs, never direct pushes, with release approval held by a role of two-or-more people.
+
+## `../Branching-Strategy/Access-Control.MD` (duplicate)
+
+Same headings and content as `Access-Control.md` above — flagged as a duplicate file living outside this folder's reading order, not part of the README's sequence.
