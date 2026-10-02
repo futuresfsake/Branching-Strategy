@@ -71,6 +71,17 @@ This is a widely-cited best practice, closely associated with **Continuous Integ
 - Google SRE Book, Chapter 16, "Managing Incidents" — https://sre.google/sre-book/managing-incidents/
   (Standard incident-response guidance: a safe rollback to the last known-good version is often preferable to writing a fix under time pressure.)
 
+## 8. Branches are lightweight local pointers, not copies — re-cloning per branch is unnecessary
+
+**Used in:** `Creating-A-Branch-And-Why-Not-To-Reclone.md`
+
+- Pro Git Book, Chapter 3.1 "Git Branching - Branches in a Nutshell" — https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+  (Explains that a Git branch is just a movable pointer to a commit, not a copy of the project — the direct justification for "don't re-clone to get a new branch.")
+- Git Docs, `git-branch` — https://git-scm.com/docs/git-branch
+- Git Docs, `git-clone` — https://git-scm.com/docs/git-clone
+- Git Docs, `git-worktree` — https://git-scm.com/docs/git-worktree
+  (The actual supported way to get multiple working directories from one repo, for the rare case a second clone feels necessary.)
+
 ## File → Section Map
 
 Quick lookup in the other direction — which sections above back up each file:
@@ -84,7 +95,7 @@ Quick lookup in the other direction — which sections above back up each file:
 | `Always-Pull-From-Dev-Dont-Be-Stupid.md` | 6 |
 | `Pulling-From-Dev-Explained.md` | 6 |
 | `Hotfix-Workflow.md` | 5, 7 |
+| `Pipeline-Flow-Diagram.md` | 1, 5 |
+| `Creating-A-Branch-And-Why-Not-To-Reclone.md` | 8 |
 
-## Honest Caveat
 
-These sources describe **general, widely-adopted industry practice** — they are not your specific company's written policy (unless your company has explicitly adopted Gitflow, which you should confirm with a lead if it matters for the argument). What they do establish is: none of the practices in these files were invented from nothing. They match the original Gitflow spec, mainstream vendor documentation (GitHub/GitLab), and established engineering writing (Fowler, Google SRE). If a groupmate wants to argue a specific point, the right move is to go to the specific source above and look at the actual sentence being disputed — not just assert either way.
